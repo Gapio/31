@@ -5,8 +5,7 @@ using UnityEngine;
 public class EnemyDefender : MonoBehaviour
 {
     public Transform behindBall;
-
-    float speed = 6.9f;
+    readonly float speed = 6.9f;
 
     Vector3 lookDirection;
 
@@ -28,7 +27,7 @@ public class EnemyDefender : MonoBehaviour
         {
             if ((transform.position - behindBall.position).magnitude > EPSILON)
             {
-                transform.Translate(lookDirection * Time.deltaTime * speed / 1.69f);
+                transform.Translate(speed / 1.69f * Time.deltaTime * lookDirection);
             }
         }
         else if (transform.position.z < 22.31f)

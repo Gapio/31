@@ -8,20 +8,19 @@ public class EnemyAttackerAi : MonoBehaviour
     public Transform footBallLeft;
     public Transform footBallRight;
     public Transform currenTarget;
-
-    float speed = 6.9f;
+    readonly float speed = 6.9f;
 
     Vector3 lookDirection;
 
     const float EPSILON = 0.1f;
 
-    Rigidbody rb;
+    //Rigidbody rb;
 
 
-    private void Start()
+    /*private void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
+    }*/
     private void Update()
     {
         lookDirection = (footBall.position - transform.position).normalized;
