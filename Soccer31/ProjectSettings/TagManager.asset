@@ -10,11 +10,12 @@ TagManager:
   - VerticalWall
   - RedGoal
   - BlueGoal
+  - BouncySurface
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

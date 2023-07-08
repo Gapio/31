@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement4 : Player
 {
-    public override void Move()
+    /*public override void Move()
     {
         //angle += Time.deltaTime * angularSpeed; // update angle
         //Vector3 direction = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.up; // calculate direction from center - rotate the up vector Angle degrees clockwise
@@ -18,5 +18,5 @@ public class PlayerMovement4 : Player
     {
         Vector3 target = new Vector3(velocity.x, 0.0f, velocity.z);
         transform.LookAt(target + transform.position);
-    }
+    }*/
 }

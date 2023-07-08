@@ -12,28 +12,39 @@ public class EnemyDefender : MonoBehaviour
 
     const float EPSILON = 0.1f;
 
+    public float behindballpos;
+
+    Vector3 startPos;
+
+    private void Start()
+    {
+        startPos = transform.position;
+    }
+
     private void Update()
     {
         lookDirection = (behindBall.position - transform.position).normalized;
 
         //if other side of the pitch
-        if (behindBall.position.z > 9.31f)
+        if (behindBall.position.x > behindballpos)
         {
             if ((transform.position - behindBall.position).magnitude > EPSILON)
             {
                 transform.Translate(lookDirection * Time.deltaTime * speed);
             }
         }
-        else if (8.69f < behindBall.position.z && behindBall.position.z < 9.31f)
+        //else if (3.1f < behindBall.position.x && behindBall.position.x < 6.9f)
+        //{
+        //    if ((transform.position - behindBall.position).magnitude > EPSILON)
+        //    {
+        //        transform.Translate(lookDirection * Time.deltaTime * speed / 1.69f);
+        //    }
+        //}
+        else/* if (transform.position.z < 10f)*/
         {
-            if ((transform.position - behindBall.position).magnitude > EPSILON)
-            {
-                transform.Translate(lookDirection * Time.deltaTime * speed / 1.69f);
-            }
-        }
-        else if (transform.position.z < 22.31f)
-        {
-           transform.Translate(0, 0, (speed / 1.31f * Time.deltaTime));
+            Vector3 dir = (startPos - transform.position).normalized;
+            transform.position += dir * speed * Time.deltaTime;
+            //transform.Translate((speed / 1.31f * Time.deltaTime), 0, 0);
         }
     }
 }
