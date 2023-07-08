@@ -362,6 +362,7 @@
 "Assets/Scenes/PlayerMovement4.cs"
 "Assets/Scripts/Enemy Attacker Ai.cs"
 "Assets/Scripts/Enemy Defender.cs"
+"Assets/Scripts/Fuck enemy ai.cs"
 "Assets/SoccerGameManager.cs"
 -langversion:9.0
 

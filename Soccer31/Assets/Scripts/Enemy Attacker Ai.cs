@@ -26,15 +26,14 @@ public class EnemyAttackerAi : MonoBehaviour
     {
         lookDirection = (footBall.position - transform.position).normalized;
 
-        //if other side of the pitch
-        if (footBall.position.z < 3.1)
+        if (footBall.position.x < 3.1)
         {
            /* if ((transform.position - footBall.position).magnitude > EPSILON)
             {
                 transform.Translate(lookDirection * Time.deltaTime * speed);
             }*/
 
-            if(footBall.position.x < 0)
+            if(footBall.position.z > 3.31f)
             {
                 currenTarget = footBallRight;
                 lookDirection = (footBallRight.position - transform.position).normalized;
@@ -42,10 +41,8 @@ public class EnemyAttackerAi : MonoBehaviour
                 {
                     transform.Translate(lookDirection * Time.deltaTime * speed);
                 }
-                // transform.Translate(1.69f * Time.deltaTime,0f,0f);
-                //GetComponent<ConstantForce>().force = new Vector3(6f,0f,0f);
             }
-            else if(footBall.position.x > 0)
+            else if(footBall.position.z < 3.31f)
             {
                 currenTarget = footBallLeft;
                 lookDirection = (footBallLeft.position - transform.position).normalized;
@@ -53,20 +50,18 @@ public class EnemyAttackerAi : MonoBehaviour
                 {
                     transform.Translate(lookDirection * Time.deltaTime * speed);
                 }
-                //transform.Translate(-1.69f * Time.deltaTime, 0f, 0f);
-                // GetComponent<ConstantForce>().force = new Vector3(-6f, 0f, 0f);
             }
         }
-        else if (3.1 > footBall.position.z || footBall.position.z < 9.31f)
+        else if (0 > footBall.position.x && footBall.position.x < 3.31f)
         {
             if ((transform.position - footBall.position).magnitude > EPSILON)
             {
                 transform.Translate(lookDirection * Time.deltaTime * speed/1.5f);
             }
         }
-        else if (transform.position.z < 9.31f)
+        else if (transform.position.x < 6.9f)
         {
-            transform.Translate(0, 0, speed/1.31f * Time.deltaTime);
+            transform.Translate(speed / 1.31f * Time.deltaTime, 0, 0);
         }
     }
 }
