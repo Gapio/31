@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 7cd0570ebc84d134d8bd34e706654a8c
+  - enabled: 1
+    path: Assets/Scenes/Gap playground.unity
+    guid: c3425706f5bb7ef499ab31c1769cabc3
   m_configObjects: {}
